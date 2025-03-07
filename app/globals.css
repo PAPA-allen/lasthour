@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 42, 35, 28;
+  --background-end-rgb: 32, 27, 22;
+  --gold: 217, 180, 120;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
+}
+
+.font-heading {
+  font-family: var(--font-playfair);
+}
+
+.font-body {
+  font-family: var(--font-poppins);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-brown-900 font-medium py-2 px-6 rounded-sm transition-all duration-300 hover:bg-gold/90 hover:shadow-lg;
+  }
+
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl font-bold mb-6;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
