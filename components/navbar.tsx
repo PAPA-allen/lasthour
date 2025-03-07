@@ -69,7 +69,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
+      <AnimatePresence >
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -98,7 +98,7 @@ export default function Navbar() {
               </Link>
             </div>
           </motion.div>
-        )}
+          )}
       </AnimatePresence>
     </header>
   )
