@@ -68,7 +68,7 @@ export default function ContactUs() {
       </div>
 
       {/* WhatsApp Icon */}
-      <a
+      {/* <a
         href="https://wa.me/1234567890" 
         target="_blank"
         rel="noopener noreferrer"
@@ -81,7 +81,7 @@ export default function ContactUs() {
         >
           <Image src="/whatsapp.png" alt="WhatsApp" width={50} height={50} className="rounded-full"/>
         </motion.div>
-      </a>
+      </a> */}
     </section>
   )
 }
