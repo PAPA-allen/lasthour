@@ -47,12 +47,10 @@ export default function Footer() {
               © {new Date().getFullYear()} Lasthour. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                Privacy Policy
+              <Link href="https://portfolio-a8hp.onrender.com" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                Developed by Arcnile
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                Terms of Service
-              </Link>
+          
             </div>
           </div>
         </div>
