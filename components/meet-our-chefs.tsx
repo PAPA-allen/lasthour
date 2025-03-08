@@ -23,24 +23,6 @@ const chefs = [
     position: "Master chef",
     image: "/chef.png",
   },
-  {
-    id: 4,
-    name: "Andrea Checchini",
-    position: "Master chef",
-    image: "/chef.png",
-  },
-  {
-    id: 5,
-    name: "Gordon Ramzi",
-    position: "Master chef",
-    image: "/chef.png",
-  },
-  {
-    id: 6,
-    name: "Lorenzo Ramzi",
-    position: "Master chef",
-    image: "/chef.png",
-  },
 ]
 
 export default function MeetOurChefs() {
