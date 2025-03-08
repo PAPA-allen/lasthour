@@ -63,7 +63,7 @@ export default function MeetOurChefs() {
   }
 
   return (
-    <section id="about-us" className="section-padding bg-brown-800" ref={sectionRef}>
+    <section id="chef" className="section-padding bg-brown-800" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
