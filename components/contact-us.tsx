@@ -69,7 +69,7 @@ export default function ContactUs() {
 
       {/* WhatsApp Icon */}
       <a
-        href="https://wa.me/1234567890" 
+        href="https://wa.me/0247549825" 
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-10 z-[99999] flex items-center justify-center w-16 h-16  transition-colors"

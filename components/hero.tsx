@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -43,7 +44,10 @@ export default function Hero() {
               Among the best Levantine chefs in the world, serving you something beyond flavor
             </p>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="btn-primary">
+              <Link href="#menu">
               See Menu
+              </Link>
+             
             </motion.button>
           </motion.div>
         </div>
