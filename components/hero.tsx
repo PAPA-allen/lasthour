@@ -37,7 +37,7 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="font-heading text-4xl md:text-6xl font-bold mb-4">
               Taste the authentic <br />
-              <span className="text-gold">Restaurant cuisine</span>
+              <span className="text-gold">LastHour cuisine</span>
             </h1>
             <p className="text-lg mb-8 max-w-lg">
               Among the best Levantine chefs in the world, serving you something beyond flavor

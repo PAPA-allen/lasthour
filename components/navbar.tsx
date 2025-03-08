@@ -61,7 +61,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
-          <span className="font-heading text-xl font-bold text-gold">Restaurant</span>
+          <span className="font-heading text-xl font-bold text-gold">LastHour</span>
         </Link>
 
         {/* Desktop Navigation */}
