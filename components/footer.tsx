@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="font-heading text-xl font-bold text-gold">Lasthour</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
-              Italy, Naples, Antonio's neighborhood
+              Tema, community 5
               <br />
               Street 12, Building 42, 45
             </p>
