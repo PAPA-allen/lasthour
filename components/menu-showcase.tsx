@@ -103,7 +103,7 @@ export default function MenuShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(4)
   const [activeCategory, setActiveCategory] = useState<Category>("all")
-  const [autoPlayEnabled, setAutoPlayEnabled] = useState(true)
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
 
   const sectionRef = useRef<HTMLDivElement>(null)

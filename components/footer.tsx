@@ -7,10 +7,10 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   return (
-    <footer className="bg-brown-900 pt-16 pb-8">
+    <footer className="bg-brown-900 pt-10 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div className="flex justify-center">
+          <div className="">
             <div className="flex items-center mb-4">
               <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
               <span className="font-heading text-xl font-bold text-gold">Lasthour</span>
@@ -36,8 +36,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {[1, 2, 3].map((i) => (
-            <div key={i}>
+          {/* {[1, 2, 3].map((i) => (
+            <div key={i} >
               <h4 className="font-medium text-white mb-4">Menu</h4>
               <ul className="space-y-2">
                 {["Home", "Menu", "About", "Contact us"].map((item) => (
@@ -49,7 +49,7 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
         </div>
 
         <div className="border-t border-brown-700 pt-8 mt-8">
