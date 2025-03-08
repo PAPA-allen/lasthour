@@ -11,7 +11,6 @@ const navLinks = [
   { name: "Menu", href: "#menu" },
   { name: "Reservations", href: "#reservations" },
   { name: "Chef", href: "#chef" },
-  { name: "Contact us", href: "#contact" },
 ]
 
 export default function Navbar() {
@@ -118,7 +117,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#book-now"
+                href="#contact"
                 className="bg-gold text-brown-900 px-4 py-2 rounded-sm hover:bg-gold/90 transition-colors duration-300 text-center font-medium"
                 onClick={() => setIsOpen(false)}
               >

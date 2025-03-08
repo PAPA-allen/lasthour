@@ -50,7 +50,6 @@ export default function Footer() {
               <Link href="https://portfolio-a8hp.onrender.com" className="text-gray-400 hover:text-gold transition-colors text-sm">
                 Developed by <span className="font-bold bg-gradient-r from-white to text-gold bg-clip-text bg-transparent">Arcnile</span>
               </Link>
-          
             </div>
           </div>
         </div>
