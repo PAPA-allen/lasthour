@@ -24,7 +24,7 @@ export default function Hero() {
     <section className="relative h-screen flex items-center overflow-hidden">
       <div ref={heroRef} className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/restaurant.png"
           alt="Levantine cuisine"
           fill
           priority
@@ -51,7 +51,7 @@ export default function Hero() {
 
       <div className="absolute right-0 bottom-0 w-1/3 md:w-1/4 h-1/3 z-10">
         <Image
-          src="/placeholder.svg?height=400&width=400"
+          src="/restaurant.png"
           alt="Featured dish"
           fill
           className="object-cover rounded-tl-lg"

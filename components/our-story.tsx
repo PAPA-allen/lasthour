@@ -19,7 +19,7 @@ export default function OurStory() {
             className="relative rounded-lg overflow-hidden"
           >
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src="/restaurant.png"
               alt="People enjoying food at Lasthour"
               width={800}
               height={600}

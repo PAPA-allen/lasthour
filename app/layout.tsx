@@ -1,10 +1,9 @@
-import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Poppins } from "next/font/google"
+import { Playfair_Display, Poppins } from 'next/font/google'
 import "./globals.css"
 import Navbar from "@/components/navbar"
 
-const playfair = Playfair_Display({
+const playfair = Playfair_Display({ 
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
@@ -19,7 +18,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Lasthour | Authentic Levantine Cuisine",
-  description: "Among the best Levantine chefs in the world, serving you something beyond flavor"
+  description: "Among the best Levantine chefs in the world, serving you something beyond flavor",
 }
 
 export default function RootLayout({
@@ -29,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${playfair.variable} ${poppins.variable} font-sans`}>
+      <body className={`${playfair.variable} ${poppins.variable} font-sans bg-brown-900 text-white overflow-x-hidden`}>
         <Navbar />
         {children}
       </body>

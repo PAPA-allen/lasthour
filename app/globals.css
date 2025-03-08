@@ -3,84 +3,83 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 42, 35, 28;
-  --background-end-rgb: 32, 27, 22;
+  --foreground: 255, 255, 255;
+  --background: 32, 27, 22;
   --gold: 217, 180, 120;
+  --brown-900: 32, 27, 22;
+  --brown-800: 42, 35, 28;
+  --brown-700: 58, 48, 38;
+  --brown-600: 74, 61, 48;
+}
+
+html, body {
+  max-width: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
 }
 
-.font-heading {
-  font-family: var(--font-playfair);
-}
-
-.font-body {
-  font-family: var(--font-poppins);
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  p, span, a, button, input, textarea {
+    @apply font-sans;
+  }
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-gold text-brown-900 font-medium py-2 px-6 rounded-sm transition-all duration-300 hover:bg-gold/90 hover:shadow-lg;
+  .container-custom {
+    @apply w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
   }
-
-  .section-title {
-    @apply font-heading text-3xl md:text-4xl font-bold mb-6;
-  }
-
+  
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .heading-xl {
+    @apply font-heading text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+  
+  .heading-lg {
+    @apply font-heading text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply font-heading text-xl md:text-2xl font-bold;
+  }
+  
+  .btn-primary {
+    @apply bg-gold text-brown-900 font-medium py-2 px-6 rounded-sm transition-all duration-300 hover:bg-gold/90;
+  }
+  
+  .btn-outline {
+    @apply border border-gold text-gold font-medium py-2 px-6 rounded-sm transition-all duration-300 hover:bg-gold/10;
   }
 }
 
-.fade-in {
-  animation: fadeIn 0.8s ease-in-out forwards;
-  opacity: 0;
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
-.slide-in-right {
-  animation: slideInRight 0.8s ease-in-out forwards;
-  opacity: 0;
+/* For tab buttons */
+.tab-button {
+  @apply px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 text-sm md:text-base;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.tab-button.active {
+  @apply bg-gold text-brown-900 font-medium;
 }
 
-.slide-in-left {
-  animation: slideInLeft 0.8s ease-in-out forwards;
-  opacity: 0;
+.tab-button:not(.active) {
+  @apply bg-brown-700 text-gray-300 hover:bg-brown-600;
 }
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-

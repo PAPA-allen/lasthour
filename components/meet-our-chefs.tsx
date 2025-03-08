@@ -9,37 +9,37 @@ const chefs = [
     id: 1,
     name: "Gordon Ramzi",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
   {
     id: 2,
     name: "Andrea Checchini",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
   {
     id: 3,
     name: "Lorenzo Ramzi",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
   {
     id: 4,
     name: "Andrea Checchini",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
   {
     id: 5,
     name: "Gordon Ramzi",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
   {
     id: 6,
     name: "Lorenzo Ramzi",
     position: "Master chef",
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/restaurant.png",
   },
 ]
 

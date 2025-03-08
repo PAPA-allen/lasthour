@@ -54,6 +54,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+         
           <Link
             href="#book-now"
             className="bg-gold text-brown-900 px-4 py-2 rounded-sm hover:bg-gold/90 transition-colors duration-300 text-sm font-medium"
