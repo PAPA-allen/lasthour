@@ -103,7 +103,6 @@ export default function MenuShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(4)
   const [activeCategory, setActiveCategory] = useState<Category>("all")
-  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
 
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -137,17 +136,6 @@ export default function MenuShowcase() {
   }, [activeCategory])
 
   const maxIndex = Math.max(0, filteredItems.length - itemsPerView)
-
-  // Auto-swipe functionality
-  useEffect(() => {
-    if (!autoPlayEnabled || isDragging || filteredItems.length <= itemsPerView) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1))
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [autoPlayEnabled, isDragging, maxIndex, itemsPerView, filteredItems.length])
 
   const changeCategory = (category: Category) => {
     setActiveCategory(category)
@@ -230,11 +218,8 @@ export default function MenuShowcase() {
                 dragElastic={0.1}
                 onDragStart={() => {
                   setIsDragging(true)
-                  setAutoPlayEnabled(false)
                 }}
                 onDragEnd={handleDragEnd}
-                onMouseEnter={() => setAutoPlayEnabled(false)}
-                onMouseLeave={() => setAutoPlayEnabled(true)}
               >
                 {filteredItems.map((item) => (
                   <motion.div
@@ -295,4 +280,5 @@ export default function MenuShowcase() {
     </section>
   )
 }
+
 

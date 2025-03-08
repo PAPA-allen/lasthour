@@ -32,7 +32,7 @@ export default function OurStory() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="text-gold font-medium mb-2">Our story</h3>
+            <h3 className="text-gold mb-2 text-3xl font-bold">Our story</h3>
             <h2 className="section-title">Lasthour 1994</h2>
             <p className="text-gray-300 mb-6">
               Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

@@ -72,7 +72,7 @@ export default function MeetOurChefs() {
           className="text-center mb-12"
         >
           <h3 className="text-gold font-medium mb-2">Team</h3>
-          <h2 className="section-title">Meet Our Chefs</h2>
+          <h2 className="section-title text-2xl font-bold">Meet Our Chefs</h2>
         </motion.div>
 
         <motion.div

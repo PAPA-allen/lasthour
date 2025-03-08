@@ -9,9 +9,9 @@ export default function Footer() {
   return (
     <footer className="bg-brown-900 pt-10 pb-8">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center">
+        <div className="flex justify-center text-center">
           <div className="">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-4 text-center justify-center">
               <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
               <span className="font-heading text-xl font-bold text-gold">Lasthour</span>
             </div>
@@ -20,36 +20,25 @@ export default function Footer() {
               <br />
               Street 12, Building 42, 45
             </p>
-            <div className="flex space-x-4">
-              <motion.a href="#" whileHover={{ y: -3 }} className="text-gray-400 hover:text-gold transition-colors">
-                <Facebook size={18} />
+            <div className="flex space-x-4 flex-col md:flex-row">
+              <motion.a
+                href="mailto:youremail@example.com"
+                className="text-gray-400 hover:text-gold transition-colors"
+                whileHover={{ y: -3 }}
+              >
+                <span className="text-sm">Email: youremail@example.com</span>
               </motion.a>
-              <motion.a href="#" whileHover={{ y: -3 }} className="text-gray-400 hover:text-gold transition-colors">
-                <Twitter size={18} />
-              </motion.a>
-              <motion.a href="#" whileHover={{ y: -3 }} className="text-gray-400 hover:text-gold transition-colors">
-                <Instagram size={18} />
-              </motion.a>
-              <motion.a href="#" whileHover={{ y: -3 }} className="text-gray-400 hover:text-gold transition-colors">
-                <Linkedin size={18} />
-              </motion.a>
-            </div>
-          </div>
 
-          {/* {[1, 2, 3].map((i) => (
-            <div key={i} >
-              <h4 className="font-medium text-white mb-4">Menu</h4>
-              <ul className="space-y-2">
-                {["Home", "Menu", "About", "Contact us"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <motion.a
+                href="tel:+1234567890"
+                className="text-gray-400 hover:text-gold transition-colors"
+                whileHover={{ y: -3 }}
+              >
+                <span className="text-sm">Phone: +233 (234) 567-890</span>
+              </motion.a>
             </div>
-          ))} */}
+
+          </div>
         </div>
 
         <div className="border-t border-brown-700 pt-8 mt-8">

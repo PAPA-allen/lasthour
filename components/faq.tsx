@@ -49,7 +49,7 @@ export default function Faq() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Frequently Asked Questions</h2>
+          <h2 className="section-title text-3xl font-bold">Frequently Asked Questions</h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
