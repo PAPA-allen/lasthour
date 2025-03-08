@@ -30,11 +30,11 @@ export default function Footer() {
               </motion.a>
 
               <motion.a
-                href="tel:+1234567890"
+                href="tel:+233247549825"
                 className="text-gray-400 hover:text-gold transition-colors"
                 whileHover={{ y: -3 }}
               >
-                <span className="text-sm">Phone: +233 (234) 567-890</span>
+                <span className="text-sm">Phone: +(233) 247-549-825</span>
               </motion.a>
             </div>
 
