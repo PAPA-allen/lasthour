@@ -109,11 +109,9 @@ export default function MenuShowcase() {
   const carouselRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
 
-  // Filter menu items based on active category
   const filteredItems =
     activeCategory === "all" ? menuItems : menuItems.filter((item) => item.category === activeCategory)
 
-  // Determine items per view based on screen size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -125,12 +123,11 @@ export default function MenuShowcase() {
       }
     }
 
-    handleResize() // Initial call
+    handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  // Reset current index when category changes
   useEffect(() => {
     setCurrentIndex(0)
   }, [activeCategory])
@@ -141,20 +138,15 @@ export default function MenuShowcase() {
     setActiveCategory(category)
   }
 
-  // Handle drag/swipe with Framer Motion
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     setIsDragging(false)
 
-    // If we can't swipe (all items fit in view), don't do anything
     if (filteredItems.length <= itemsPerView) return
 
-    const swipeThreshold = 50 // Minimum distance to trigger a swipe
-
+    const swipeThreshold = 50
     if (info.offset.x < -swipeThreshold) {
-      // Swipe left -> next slide
       setCurrentIndex((prev) => Math.min(prev + 1, maxIndex))
     } else if (info.offset.x > swipeThreshold) {
-      // Swipe right -> previous slide
       setCurrentIndex((prev) => Math.max(prev - 1, 0))
     }
   }
