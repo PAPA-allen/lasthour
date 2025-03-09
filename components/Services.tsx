@@ -143,7 +143,7 @@ export default function CateringAndEvents() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-gold font-medium mb-2">Services</h3>
+            <h3 className="text-gold font-bold mb-2 text-3xl">Services</h3>
             <h2 className="section-title text-2xl font-bold">Catering & Events</h2>
             <p className="text-gray-300 max-w-2xl mx-auto mt-4">
               Let us bring the Lasthour experience to your special occasion. Our catering team creates memorable
