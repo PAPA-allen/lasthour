@@ -16,10 +16,15 @@ const poppins = Poppins({
   display: "swap",
 })
 
+
 export const metadata: Metadata = {
   title: "Lasthour Restaurant",
   description: "Among the best Levantine chefs in the world, serving you something beyond flavor",
-}
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 
 export default function RootLayout({
   children,
