@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "Menu", href: "#menu" },
   { name: "About Us", href: "#about" },
+  { name: "Menu", href: "#menu" },
   { name: "Services", href: "#catering" },
   { name: "Reservations", href: "#contact" },
 ]
@@ -60,7 +60,7 @@ export default function Navbar() {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.3,
     }
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -166,23 +166,14 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-2 py-2 transition-colors duration-300 ${
-                    isLinkActive(link.href) ? "text-gold " : "text-white hover:text-gold"
+                  className={`relative py-2 pl-3 transition-colors duration-300 ${
+                    isLinkActive(link.href)
+                      ? "text-gold border-l-2 border-gold bg-brown-700/30"
+                      : "text-white hover:text-gold"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="flex items-center justify-between">
-                    <span>{link.name}</span>
-                    {isLinkActive(link.href) && (
-                      <motion.div
-                        className="w-1 h-full bg-gold absolute left-0 top-0"
-                        layoutId="mobileActiveIndicator"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </div>
+                  {link.name}
                 </Link>
               ))}
               <Link
