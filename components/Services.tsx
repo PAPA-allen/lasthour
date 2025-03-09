@@ -267,10 +267,10 @@ export default function CateringAndEvents() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 bg-brown-800 p-4 rounded-lg">
-                      ₵
+                      <p className="text-gold">₵</p>
                         <div>
-                          <p className="text-sm text-gray-400">Pricing</p>
-                          <p className="text-white">{getSelectedService()?.details.pricing}</p>
+                          <p className="text-sm text-gray-400 ml-3">Pricing</p>
+                          <p className="text-white ml-3">{getSelectedService()?.details.pricing}</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 bg-brown-800 p-4 rounded-lg">
