@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
   { name: "Menu", href: "#menu" },
+  { name: "About us", href: "#about" },
   { name: "Services", href: "#catering" },
   { name: "Reservations", href: "#contact" },
 ]
@@ -53,23 +53,24 @@ export default function Navbar() {
     }
   }, [isOpen])
 
-  // Add intersection observer to track active section
   useEffect(() => {
     const sectionIds = navLinks.map((link) => link.href.replace("#", ""))
 
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.3,
-    }
-
+      threshold: 0.5, 
+    };
+    
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
+          console.log("Active section:", entry.target.id);
+          setActiveSection(entry.target.id);
         }
-      })
-    }
+      });
+    };
+    
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
 
