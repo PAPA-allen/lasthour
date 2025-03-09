@@ -17,7 +17,7 @@ export default function ContactUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title text-3xl font-bold">Book A Table</h2>
+          <h2 className="section-title text-3xl font-bold">Reservations</h2>
         </motion.div>
 
         <div className="max-w-2xl mx-auto">
