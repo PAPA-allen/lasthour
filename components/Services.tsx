@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import Image from "next/image"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { X, Calendar, Users, Utensils, DollarSign, MapPin, Clock, Mail, Phone } from "lucide-react"
+import { X, Calendar, Users, Utensils, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 
 const cateringServices = [
@@ -100,13 +100,11 @@ export default function CateringAndEvents() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
   const [selectedService, setSelectedService] = useState<number | null>(null)
-  // Add a new state for the contact modal
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const openModal = (id: number) => setSelectedService(id)
   const closeModal = () => setSelectedService(null)
 
-  // Add functions to open and close the contact modal
   const openContactModal = () => {
     setIsContactModalOpen(true)
   }
@@ -203,8 +201,7 @@ export default function CateringAndEvents() {
             >
               <Link href="#contact">
               Request a Quote
-              </Link>
-            
+              </Link>    
             </motion.button>
           
           </motion.div>
