@@ -12,12 +12,12 @@ const navLinks = [
   { name: "Menu", href: "#menu" },
   { name: "Services", href: "#catering" },
   { name: "Reservations", href: "#contact" },
- 
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
   const menuRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -53,6 +53,49 @@ export default function Navbar() {
     }
   }, [isOpen])
 
+  // Add intersection observer to track active section
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.replace("#", ""))
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id)
+        if (element) {
+          observer.unobserve(element)
+        }
+      })
+    }
+  }, [])
+
+  // Function to determine if a link is active
+  const isLinkActive = (href: string) => {
+    const section = href.replace("#", "")
+    return section === activeSection
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -71,9 +114,20 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-white hover:text-gold transition-colors duration-300 text-sm"
+              className={`relative text-sm transition-colors duration-300 ${
+                isLinkActive(link.href) ? "text-gold" : "text-white hover:text-gold"
+              }`}
             >
               {link.name}
+              {isLinkActive(link.href) && (
+                <motion.div
+                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-gold"
+                  layoutId="activeIndicator"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
             </Link>
           ))}
 
@@ -112,10 +166,23 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white hover:text-gold transition-colors duration-300 py-2"
+                  className={`relative py-2 transition-colors duration-300 ${
+                    isLinkActive(link.href) ? "text-gold" : "text-white hover:text-gold"
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
+                  <div className="flex items-center justify-between">
+                    <span>{link.name}</span>
+                    {isLinkActive(link.href) && (
+                      <motion.div
+                        className="w-1 h-full bg-gold absolute left-0 top-0"
+                        layoutId="mobileActiveIndicator"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </div>
                 </Link>
               ))}
               <Link
