@@ -166,8 +166,8 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative py-2 transition-colors duration-300 ${
-                    isLinkActive(link.href) ? "text-gold" : "text-white hover:text-gold"
+                  className={`relative px-2 py-2 transition-colors duration-300 ${
+                    isLinkActive(link.href) ? "text-gold " : "text-white hover:text-gold"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
