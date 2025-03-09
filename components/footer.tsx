@@ -11,10 +11,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
           {/* Left side - Logo, Address and Contact */}
           <div className="mb-8 md:mb-0 text-center md:text-left">
-            <Link className="flex items-center mb-4 justify-center md:justify-start" href="#home">
-              <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
-              <span className="font-heading text-xl font-bold text-gold">Lasthour</span>
-            </Link>
+          <Link href="#home" className="flex items-center">
+          <span className="font-heading text-xl font-bold text-gold">Last<span className="bg-gradient-to-r from-red-200 to to-red-600 text-transparent bg-clip-text">Hour </span>
+           🍛</span>
+        </Link>
             <p className="text-gray-400 text-sm mb-4">
               Tema, community 5
               <br />
