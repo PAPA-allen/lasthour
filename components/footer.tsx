@@ -11,14 +11,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
           {/* Left side - Logo, Address and Contact */}
           <div className="mb-8 md:mb-0 text-center md:text-left">
-            <div className="flex items-center mb-4 justify-center md:justify-start">
+            <Link className="flex items-center mb-4 justify-center md:justify-start" href="#home">
               <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
               <span className="font-heading text-xl font-bold text-gold">Lasthour</span>
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm mb-4">
               Tema, community 5
               <br />
-              Street 12, Building 42, 45
+              Soldier Line, Pentecost Street
             </p>
             <div className="flex flex-col space-y-1">
               <motion.a
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Right side - Open Hours */}
           <div className="text-center">
-            <h3 className="text-gold text-md font-semibold mb-2">OPEN HOURS</h3>
+            <h3 className="text-gold text-md font-bold mb-2">OPEN HOURS</h3>
             <p className="text-gray-400 text-sm">
               Monday - Friday: 10 AM - 12 AM
               <br />
@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="border-t border-brown-700 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Lasthour. All rights reserved.
+              &copy; {new Date().getFullYear()} Lasthour. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link

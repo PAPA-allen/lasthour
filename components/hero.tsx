@@ -22,7 +22,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div ref={heroRef} className="absolute inset-0 z-0">
         <Image
           src="/restaurant.png"
