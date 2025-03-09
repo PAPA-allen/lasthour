@@ -7,11 +7,12 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "#home" },
   { name: "About Us", href: "#about" },
   { name: "Menu", href: "#menu" },
+  { name: "Services", href: "#catering" },
   { name: "Reservations", href: "#contact" },
-  { name: "Chef", href: "#chef" },
+ 
 ]
 
 export default function Navbar() {
@@ -59,7 +60,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
+        <Link href="#home" className="flex items-center">
           <Image src="/logo.svg" alt="Lasthour Logo" width={32} height={32} className="mr-2" />
           <span className="font-heading text-xl font-bold text-gold">LastHour</span>
         </Link>
