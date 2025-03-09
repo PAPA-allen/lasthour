@@ -20,6 +20,17 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home")
   const menuRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+ 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +71,7 @@ export default function Navbar() {
       root: null,
       rootMargin: "0px",
       threshold: 0.5, 
-    };
+    }
     
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -69,9 +80,8 @@ export default function Navbar() {
           setActiveSection(entry.target.id);
         }
       });
-    };
+    }
     
-
     const observer = new IntersectionObserver(observerCallback, observerOptions)
 
     sectionIds.forEach((id) => {
@@ -91,10 +101,17 @@ export default function Navbar() {
     }
   }, [])
 
-  // Function to determine if a link is active
   const isLinkActive = (href: string) => {
     const section = href.replace("#", "")
     return section === activeSection
+  }
+
+
+  const handleLinkClick = (href: string) => {
+    if (isMobile) {
+      setActiveSection(href.replace("#", "")) 
+      setIsOpen(false)
+    }
   }
 
   return (
@@ -167,12 +184,12 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  onClick={() => handleLinkClick(link.href)} // Update active section on mobile
                   className={`relative py-2 pl-3 transition-colors duration-300 ${
                     isLinkActive(link.href)
                       ? "text-gold border-l-2 border-gold bg-brown-700/30"
                       : "text-white hover:text-gold"
                   }`}
-                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
@@ -191,4 +208,3 @@ export default function Navbar() {
     </header>
   )
 }
-
