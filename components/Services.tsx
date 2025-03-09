@@ -3,7 +3,8 @@
 import { useRef, useState } from "react"
 import Image from "next/image"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { X, Calendar, Users, Utensils, DollarSign } from "lucide-react"
+import { X, Calendar, Users, Utensils, DollarSign, MapPin, Clock, Mail, Phone } from "lucide-react"
+import Link from "next/link"
 
 const cateringServices = [
   {
@@ -23,7 +24,7 @@ const cateringServices = [
         "Champagne toast and beverage packages",
       ],
       capacity: "50-300 guests",
-      pricing: "Starting from $75 per person",
+      pricing: "Affordable",
       testimonial: {
         text: "Lasthour catered our wedding and exceeded all our expectations. The food was exceptional, the service impeccable, and they handled every detail perfectly.",
         author: "Sarah & Michael Johnson",
@@ -52,7 +53,7 @@ const cateringServices = [
         "Corporate branding opportunities",
       ],
       capacity: "10-500 attendees",
-      pricing: "Starting from $35 per person",
+      pricing: "Affordable",
       testimonial: {
         text: "We've used Lasthour for all our quarterly meetings and client events. Their attention to detail and quality of food has helped us make a great impression every time.",
         author: "Robert Chen, CEO of TechGrowth Inc.",
@@ -81,15 +82,15 @@ const cateringServices = [
         "Full setup and cleanup services",
       ],
       capacity: "20-150 guests",
-      pricing: "Starting from $55 per person",
+      pricing: "Affordable",
       testimonial: {
         text: "The team at Lasthour made my 50th birthday celebration absolutely perfect. The food was amazing, and they took care of everything so I could enjoy my party.",
         author: "Patricia Osei",
       },
       gallery: [
-       "/restaurant.png",
-       "/restaurant.png",
-       "/restaurant.png",
+        "/restaurant.png",
+        "/restaurant.png",
+        "/restaurant.png",
       ],
     },
   },
@@ -99,9 +100,20 @@ export default function CateringAndEvents() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
   const [selectedService, setSelectedService] = useState<number | null>(null)
+  // Add a new state for the contact modal
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const openModal = (id: number) => setSelectedService(id)
   const closeModal = () => setSelectedService(null)
+
+  // Add functions to open and close the contact modal
+  const openContactModal = () => {
+    setIsContactModalOpen(true)
+  }
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false)
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -189,11 +201,12 @@ export default function CateringAndEvents() {
               whileTap={{ scale: 0.95 }}
               className="bg-gold text-brown-900 px-8 py-3 rounded-sm font-medium hover:bg-gold/90 transition-colors"
             >
+              <Link href="#contact">
               Request a Quote
+              </Link>
+            
             </motion.button>
-            <p className="text-gray-400 mt-4 text-sm">
-              Contact us at <span className="text-gold">events@lasthour.com</span> for custom event planning
-            </p>
+          
           </motion.div>
         </div>
       </section>
@@ -254,7 +267,7 @@ export default function CateringAndEvents() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 bg-brown-800 p-4 rounded-lg">
-                        <DollarSign className="text-gold" size={20} />
+                      ₵
                         <div>
                           <p className="text-sm text-gray-400">Pricing</p>
                           <p className="text-white">{getSelectedService()?.details.pricing}</p>
@@ -300,19 +313,23 @@ export default function CateringAndEvents() {
                       </div>
                     </div>
 
-                    <div className="bg-brown-800 p-4 rounded-lg mb-6">
+                    {/* <div className="bg-brown-800 p-4 rounded-lg mb-6">
                       <h3 className="text-lg font-medium mb-2">Client Testimonial</h3>
                       <p className="text-gray-300 italic text-sm mb-2">
                         "{getSelectedService()?.details.testimonial.text}"
                       </p>
                       <p className="text-gold text-sm">— {getSelectedService()?.details.testimonial.author}</p>
-                    </div>
+                    </div> */}
 
                     <div className="flex justify-center">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="bg-gold text-brown-900 px-8 py-3 rounded-sm font-medium hover:bg-gold/90 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          openContactModal()
+                        }}
                       >
                         Book This Service
                       </motion.button>
@@ -320,6 +337,70 @@ export default function CateringAndEvents() {
                   </div>
                 </div>
               )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* Contact Modal */}
+      <AnimatePresence>
+        {isContactModalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => {
+              closeContactModal()
+            }}
+          >
+            <motion.div
+              className="bg-brown-900 rounded-lg max-w-md w-full p-6"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/20 mb-4">
+                  <Calendar className="text-gold" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Book Your Event</h3>
+                <p className="text-gray-300 mb-6">
+                  Contact our events team to book {getSelectedService()?.title.toLowerCase()} or customize a package for
+                  your special occasion.
+                </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center justify-center space-x-3 p-3 bg-brown-800 rounded-lg">
+                    <Mail className="text-gold flex-shrink-0" size={20} />
+                    <span className="text-gray-300">events@lasthour.com</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-3 p-3 bg-brown-800 rounded-lg">
+                    <Phone className="text-gold flex-shrink-0" size={20} />
+                    <span className="text-gray-300">+(233) 247-549-825</span>
+                  </div>
+                </div>
+
+                <div className="flex space-x-3">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 bg-brown-800 text-gray-300 px-4 py-3 rounded-sm font-medium hover:bg-brown-700 transition-colors"
+                    onClick={closeContactModal}
+                  >
+                    Close
+                  </motion.button>
+                  <motion.a
+                    href="tel:+233247549825"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 bg-gold text-brown-900 px-4 py-3 rounded-sm font-medium hover:bg-gold/90 transition-colors text-center"
+                  >
+                    Call Now
+                  </motion.a>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}
