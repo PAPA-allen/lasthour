@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <Hero />
-      <MenuShowcase />
       <OurStory />
+      <MenuShowcase />
       <CateringAndEvents/>
       <Faq />
       <ContactUs />
