@@ -17,7 +17,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Lasthour | Authentic Levantine Cuisine",
+  title: "Lasthour Restaurant",
   description: "Among the best Levantine chefs in the world, serving you something beyond flavor",
 }
 
@@ -35,7 +35,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
