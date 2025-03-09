@@ -10,13 +10,13 @@ const cateringServices = [
     id: 1,
     title: "Wedding Receptions",
     description: "Make your special day unforgettable with our elegant wedding catering services.",
-    image: "/restaurant.png",
+    image: "/wedding.png",
   },
   {
     id: 2,
     title: "Corporate Events",
     description: "Impress your clients and team with professional catering for meetings and corporate functions.",
-    image: "/restaurant.png",
+    image: "/private.png",
   },
   {
     id: 3,
