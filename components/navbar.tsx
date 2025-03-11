@@ -122,8 +122,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center">
-          <span className="font-heading text-xl font-bold text-gold">Last<span className="bg-gradient-to-r from-red-200 to to-red-600 text-transparent bg-clip-text">Hour </span>
-           🍛</span>
+          <span className=" text-xl font-bold text-gold">L a s t <span className="text-gold">H <span> 🥗</span> u r </span>
+           </span>
         </Link>
 
         {/* Desktop Navigation */}
