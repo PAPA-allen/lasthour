@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Left side - Logo, Address and Contact */}
           <div className="mb-8 md:mb-0 text-center md:text-left">
             <Link className="flex items-center mb-4 justify-center md:justify-start" href="#home">
-            <span className=" text-xl font-bold text-gold">L a s t <span className="text-gold">H <span> 🥗</span> u r </span>
+            <span className=" text-xl font-bold text-gold">L a s t <span className="text-gold">H <span> 🍽️</span> u r </span>
             </span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">

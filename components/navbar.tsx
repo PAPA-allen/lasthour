@@ -122,7 +122,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center">
-          <span className=" text-xl font-bold text-gold">L a s t <span className="text-gold">H <span> 🥗</span> u r </span>
+          <span className=" text-xl font-bold text-gold">L a s t <span className="text-gold">H <span> 🍽️</span> u r </span>
            </span>
         </Link>
 
