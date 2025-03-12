@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import {  PhoneIcon as WhatsApp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function ContactUs() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -71,44 +72,44 @@ export default function ContactUs() {
 
       {/* WhatsApp Icon */}
       <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-          delay: 1,
-        }}
-        className="fixed bottom-6 right-6 z-50"
-      >
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="relative">
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              boxShadow: [
-                "0 0 0 0 rgba(37, 211, 102, 0.5)",
-                "0 0 0 10px rgba(37, 211, 102, 0)",
-                "0 0 0 0 rgba(37, 211, 102, 0)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "loop",
-            }}
-            className="absolute inset-0 rounded-full"
-          />
-          <Link
-            href="https://wa.me/233247549825"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-xl hover:bg-green-600 transition-all"
-            aria-label="Contact us on WhatsApp"
-          >
-            <WhatsApp className="h-8 w-8" />
-          </Link>
-        </motion.div>
-      </motion.div>
+  initial={{ scale: 0, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 260,
+    damping: 20,
+    delay: 1,
+  }}
+  className="fixed bottom-6 right-6 z-50"
+>
+  <motion.a
+    href="https://wa.me/+233247549825" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-xl hover:bg-green-600 transition-all cursor-pointer"
+    aria-label="Contact us on WhatsApp"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+  >
+    <motion.div
+      animate={{
+        scale: [1, 1.1, 1],
+        boxShadow: [
+          "0 0 0 0 rgba(37, 211, 102, 0.5)",
+          "0 0 0 10px rgba(37, 211, 102, 0)",
+          "0 0 0 0 rgba(37, 211, 102, 0)",
+        ],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "loop",
+      }}
+      className="absolute inset-0 rounded-full"
+    />
+    <FaWhatsapp className="h-8 w-8 text-white" />
+  </motion.a>
+</motion.div>
     </section>
   )
 }
